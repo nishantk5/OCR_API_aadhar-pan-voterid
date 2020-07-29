@@ -29,7 +29,7 @@ def get_name(txt):
         pass
 
 def panocr(image):
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
     config = ('-l eng --oem 1 --psm 3')
     text = pytesseract.image_to_string(image, config=config)
 
