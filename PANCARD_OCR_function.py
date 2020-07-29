@@ -30,7 +30,7 @@ def get_name(txt):
         pass
 
 def panocr(image):
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
     config = ('-l eng --oem 1 --psm 3')
     filename3 = './uploads/name.png'
     image.save(filename3, dpi=(300, 300))
@@ -55,7 +55,7 @@ def panocr(image):
 
     name=[]
     for item in textlist:
-        print(item)
+        #print(item)
         remove_lower = lambda text: re.sub('[a-z]', '', item)
         if remove_lower:
             textlist.remove(item)
