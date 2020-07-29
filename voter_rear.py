@@ -12,7 +12,7 @@ def Voter_IDREAR(img):
     img.save(filename3, dpi=(300, 300))
     config = ('-l eng --oem 1 --psm 3')
     d = pytesseract.image_to_data(img, lang='eng', output_type=Output.DICT, config=config)
-    print(d)
+    #print(d)
 
     tt = []
     z = 0
@@ -21,7 +21,7 @@ def Voter_IDREAR(img):
             j = strs = re.sub(r'[?|$|.|!]',r'',j)
             tt.append(j)
         z = z + 1
-    print(tt)
+    #print(tt)
     res = get_result4(tt)
 
     return res
