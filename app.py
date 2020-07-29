@@ -7,6 +7,7 @@ from adfront import *
 from PANCARD_OCR_function import *
 from voter_rear import *
 from voter_front import *
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 app = Flask(__name__)
 
 @app.route("/")
