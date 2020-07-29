@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hi():
-    return render_template('upload.html')
+    return render_template('index.html')
 @app.route("/", methods = ['GET', 'POST'])
 def home():
     prop = {}
@@ -47,7 +47,7 @@ def home():
             data = Voter_IDFRONT(img)
             return jsonify(data)
     else:
-        return render_template('upload.html')
+        return render_template('index.html')
             
 
 
