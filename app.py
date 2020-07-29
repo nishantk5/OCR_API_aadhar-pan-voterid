@@ -8,7 +8,7 @@ from PANCARD_OCR_function import *
 from voter_rear import *
 from voter_front import *
 app = Flask(__name__)
-#pytesseract.pytesseract.tesseract_cmd = ‘/app/.apt/usr/bin/tesseract’
+pytesseract.pytesseract.tesseract_cmd = ‘/app/.apt/usr/bin/tesseract’
 @app.route("/")
 def hi():
     return render_template('upload.html')
