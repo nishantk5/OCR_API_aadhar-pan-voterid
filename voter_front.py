@@ -8,6 +8,9 @@ pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
 def Voter_IDFRONT(img):
     dim = (500, 400)
+    open_cv_image = np.array(img)
+    # Convert RGB to BGR
+    img = open_cv_image[:, :, ::-1].copy()
     img = cv2.resize(img, dim, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
     # crop_img = rotated[150:180 + 230, 189:259 + 450]
     crop_img = img[200:, :]
