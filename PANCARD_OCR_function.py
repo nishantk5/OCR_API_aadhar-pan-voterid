@@ -50,7 +50,7 @@ def panocr(image):
 
     name=[]
     for item in textlist:
-        print(item)
+        #print(item)
         remove_lower = lambda text: re.sub('[a-z]', '', item)
         if remove_lower:
             textlist.remove(item)
