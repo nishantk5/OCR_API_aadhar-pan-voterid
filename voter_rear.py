@@ -9,6 +9,9 @@ import re
 pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 def Voter_IDREAR(img):
     config = ('-l eng --oem 1 --psm 3')
+    open_cv_image = np.array(img)
+    # Convert RGB to BGR
+    img = open_cv_image[:, :, ::-1].copy()
     d = pytesseract.image_to_data(img, lang='eng', output_type=Output.DICT, config=config)
     print(d)
 
