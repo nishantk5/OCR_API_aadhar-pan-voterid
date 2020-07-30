@@ -8,12 +8,18 @@ import re
 
 def get_img2(img):
     dim = (800, 600)
+    open_cv_image = np.array(img)
+    # Convert RGB to BGR
+    img = open_cv_image[:, :, ::-1].copy()
     img = cv2.resize(img, dim, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
     rotated = img[135: 260 + 265, 10:190 + 530]
     return rotated
 
 def get_name_img(img):
     dim = (800, 600)
+    open_cv_image = np.array(img)
+    # Convert RGB to BGR
+    img = open_cv_image[:, :, ::-1].copy()
     img = cv2.resize(img, dim, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
     im = img[150:275, 10:190 + 520]
     return im
