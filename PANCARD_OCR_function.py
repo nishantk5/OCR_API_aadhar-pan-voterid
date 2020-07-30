@@ -32,7 +32,7 @@ def panocr(image):
     #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
     config = ('-l eng --oem 1 --psm 3')
     dim = (550, 400)
-    open_cv_image = np.array(img)
+    open_cv_image = np.array(image)
     # Convert RGB to BGR
     img = open_cv_image[:, :, ::-1].copy()
     img = cv2.resize(image, dim, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
