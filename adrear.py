@@ -15,6 +15,9 @@ def get_address(lis):
 
 def get_img1(img):
     dim = (800, 600)#Resizing the image
+    open_cv_image = np.array(img)
+    # Convert RGB to BGR
+    img = open_cv_image[:, :, ::-1].copy()
     img = cv2.resize(img, dim, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
     rotated = img[120: 285 + 265, 260:190 + 600]#Croping the image to English written Address in Aadhar
     return rotated
