@@ -28,14 +28,14 @@ def get_name(txt):
     except:
         pass
 
-def panocr(image):
+def panocr(img):
     #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
     config = ('-l eng --oem 1 --psm 3')
     dim = (550, 400)
-    open_cv_image = np.array(image)
+    open_cv_image = np.array(img)
     # Convert RGB to BGR
     img = open_cv_image[:, :, ::-1].copy()
-    img = cv2.resize(image, dim, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
+    img = cv2.resize(img, dim, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ret,gray = cv2.threshold(gray, 120, 220, cv2.THRESH_BINARY +cv2.THRESH_OTSU)
     text = pytesseract.image_to_string(gray, config=config)
